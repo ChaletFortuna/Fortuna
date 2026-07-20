@@ -1,6 +1,9 @@
 name: Sync reservation calendar
 
 on:
+  push:
+    branches: [main]
+    paths-ignore: [availability.json]
   schedule:
     - cron: "0 5 * * *"   # every day at 05:00 UTC
   workflow_dispatch:        # allows manual run from the Actions tab
