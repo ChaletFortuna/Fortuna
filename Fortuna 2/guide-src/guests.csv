@@ -1,0 +1,2 @@
+# email,reservation number,name (optional)  — one guest per line, then run: python3 scripts/build_guide.py
+oesnou@gmail.com,Fortuna1,Olivier
