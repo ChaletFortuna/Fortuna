@@ -33,6 +33,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.92);backdrop-f
 .nav-links{display:flex;gap:26px;align-items:center;list-style:none}
 .nav-links a{text-decoration:none;font-size:.88rem;font-weight:500;color:var(--ink)}
 .nav-links a:hover{color:var(--gold)}
+.nav-links a.nav-guest{border:1px solid rgba(184,137,74,.55);border-radius:20px;padding:6px 14px;color:var(--gold);font-weight:600}
+.nav-links a.nav-guest:hover{background:var(--gold);color:#fff}
 .lang{display:flex;gap:4px;border:1px solid rgba(122,82,51,.3);border-radius:20px;padding:3px}
 .lang button{border:0;background:none;font:600 .75rem 'Inter';padding:5px 10px;border-radius:16px;cursor:pointer;color:var(--muted)}
 .lang button.active{background:var(--pine);color:#fff}
@@ -131,6 +133,10 @@ td.past div{color:#c9c2b8}
 .info-card{background:#fff;border-radius:var(--radius);padding:26px;border:1px solid rgba(122,82,51,.1)}
 .info-card h3{color:var(--pine);font-size:1.3rem;margin-bottom:10px}
 .info-card p{font-size:.9rem;color:#4d453c}
+.guest-cta{margin-top:22px;background:var(--pine);color:#f4f1ea;border-radius:var(--radius);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.guest-cta h3{color:#fff;font-size:1.6rem;margin-bottom:6px}
+.guest-cta p{font-size:.9rem;color:#cfd6cd;max-width:640px}
+.guest-cta .btn{flex:none}
 
 /* FOOTER */
 footer{background:var(--wood-dark);color:#e8ddd0;padding:48px 0 32px}
@@ -164,6 +170,7 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
       <li><a href="#booking" data-i18n="nav_booking">Availability</a></li>
       <li><a href="#location" data-i18n="nav_location">Location</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      <li><a href="guest.html" class="nav-guest" data-i18n="nav_guest">Guest area</a></li>
     </ul>
     <div style="display:flex;gap:14px;align-items:center">
       <div class="lang">
@@ -307,6 +314,13 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
       <div class="info-card"><h3 data-i18n="info2_t">House rules</h3><p data-i18n="info2_p">Maximum 6 guests. Strictly non-smoking. No pets. The chalet includes steps and stairs.</p></div>
       <div class="info-card"><h3 data-i18n="info3_t">Your host</h3><p data-i18n="info3_p">Olivier — Airbnb Superhost with 15 years of hosting, a 100% response rate and replies within a few hours, in English or French.</p></div>
     </div>
+    <div class="guest-cta">
+      <div>
+        <h3 data-i18n="guest_t">Already booked? Your welcome guide is online</h3>
+        <p data-i18n="guest_p">Arrival instructions, keys and Wi-Fi, how everything works in the apartment, and our personal tips for Zermatt — all in your private guest area.</p>
+      </div>
+      <a class="btn btn-gold" href="guest.html" data-i18n="guest_cta">Enter the guest area</a>
+    </div>
   </div>
 </section>
 
@@ -338,7 +352,10 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
 /* ===================== I18N ===================== */
 const i18n = {
 en:{
-  nav_about:"The Apartment",nav_gallery:"Gallery",nav_amenities:"Amenities",nav_booking:"Availability",nav_location:"Location",nav_contact:"Contact",
+  nav_about:"The Apartment",nav_gallery:"Gallery",nav_amenities:"Amenities",nav_booking:"Availability",nav_location:"Location",nav_contact:"Contact",nav_guest:"Guest area",
+  guest_t:"Already booked? Your welcome guide is online",
+  guest_p:"Arrival instructions, keys and Wi-Fi, how everything works in the apartment, and our personal tips for Zermatt — all in your private guest area.",
+  guest_cta:"Enter the guest area",
   badge_superhost:"Superhost · 15 years",badge_fav:"Guest Favourite",
   hero_title:"Your alpine home<br>facing the Matterhorn",
   hero_tag:"A sunny, cosy 3-bedroom apartment in a traditional wooden chalet in the heart of Zermatt — 5 minutes from the Sunnegga funicular.",
@@ -370,7 +387,10 @@ en:{
   days:["Mo","Tu","We","Th","Fr","Sa","Su"]
 },
 fr:{
-  nav_about:"L'appartement",nav_gallery:"Galerie",nav_amenities:"Équipements",nav_booking:"Disponibilités",nav_location:"Situation",nav_contact:"Contact",
+  nav_about:"L'appartement",nav_gallery:"Galerie",nav_amenities:"Équipements",nav_booking:"Disponibilités",nav_location:"Situation",nav_contact:"Contact",nav_guest:"Espace voyageurs",
+  guest_t:"Déjà réservé ? Votre livret d'accueil est en ligne",
+  guest_p:"Instructions d'arrivée, clés et Wi-Fi, le fonctionnement de l'appartement et nos adresses préférées à Zermatt — le tout dans votre espace voyageurs privé.",
+  guest_cta:"Accéder à l'espace voyageurs",
   badge_superhost:"Superhôte · 15 ans",badge_fav:"Coup de cœur voyageurs",
   hero_title:"Votre refuge alpin<br>face au Cervin",
   hero_tag:"Un appartement ensoleillé et chaleureux de 3 chambres dans un chalet en bois traditionnel au cœur de Zermatt — à 5 minutes du funiculaire de Sunnegga.",
@@ -402,7 +422,10 @@ fr:{
   days:["Lu","Ma","Me","Je","Ve","Sa","Di"]
 },
 de:{
-  nav_about:"Die Wohnung",nav_gallery:"Galerie",nav_amenities:"Ausstattung",nav_booking:"Verfügbarkeit",nav_location:"Lage",nav_contact:"Kontakt",
+  nav_about:"Die Wohnung",nav_gallery:"Galerie",nav_amenities:"Ausstattung",nav_booking:"Verfügbarkeit",nav_location:"Lage",nav_contact:"Kontakt",nav_guest:"Gästebereich",
+  guest_t:"Schon gebucht? Ihr Willkommensheft ist online",
+  guest_p:"Anreise, Schlüssel und WLAN, wie alles in der Wohnung funktioniert, und unsere persönlichen Zermatt-Tipps — alles in Ihrem privaten Gästebereich.",
+  guest_cta:"Zum Gästebereich",
   badge_superhost:"Superhost · 15 Jahre",badge_fav:"Gästeliebling",
   hero_title:"Ihr alpines Zuhause<br>mit Blick aufs Matterhorn",
   hero_tag:"Eine sonnige, gemütliche 3-Zimmer-Wohnung in einem traditionellen Holzchalet im Herzen von Zermatt — 5 Minuten von der Sunnegga-Bahn entfernt.",
