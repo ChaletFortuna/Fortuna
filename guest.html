@@ -74,6 +74,8 @@ label.f input:focus{outline:2px solid var(--gold);border-color:transparent}
 .toc a:hover{background:var(--cream-2)}
 .toc a.active{background:var(--pine);color:#fff}
 .toc .ico{width:20px;text-align:center;font-size:1rem}
+.toc .appliances{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:.86rem;font-weight:500}
+.toc .appliances:hover{background:var(--cream-2)}
 .toc .out{margin-top:10px;padding-top:10px;border-top:1px solid rgba(122,82,51,.12)}
 .toc .out button{width:100%}
 
@@ -293,6 +295,7 @@ function openGuide(html, name){
   $('toc').innerHTML =
     `<div class="who"><b>${name ? 'Welcome, '+escapeHtml(name) : 'Welcome'}</b>Guest guide · Chalet Fortuna</div>` +
     secs.map(s=>`<a href="#${s.id}" data-sec="${s.id}"><span class="ico">${s.dataset.icon||'•'}</span>${s.dataset.title}</a>`).join('') +
+    `<a href="fortuna_appliances.html" class="appliances" style="margin-top:4px"><span class="ico">📖</span>Appliance Manuals</a>` +
     `<div class="out"><button class="btn btn-ghost btn-sm" id="logout">Sign out</button></div>`;
   $('logout').onclick=()=>{ try{sessionStorage.removeItem('cf_guest');}catch{} location.hash=''; location.reload(); };
   /* lightbox on figures */
