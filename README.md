@@ -4,8 +4,11 @@ Modern trilingual (EN/FR/DE) website for Chalet Fortuna, Zermatt, with a reserva
 
 ## Files
 
-- `index.html` — the whole public site (design, 3 languages, gallery, calendar)
+- `index.html` — the whole public site (3 languages, gallery, Matterport 3D tour, calendar)
 - `guest.html` — the guest area: login + the welcome guide
+- `fortuna_appliances.html` — appliance manuals (Google Drive links), linked from the guest guide
+- `fortuna.css` — **shared design system**: colours, fonts, nav, buttons, footer used by all three pages. Change the look here, once. After editing it, bump the `?v=` date in the `<link rel="stylesheet">` line of each page so browsers reload it.
+- `favicon.svg` — browser-tab icon
 - `images/` — optimized photos (from the old site, 27 MB → 3 MB)
 - `images/guide/` — photos used in the welcome guide
 - `guide/` — the **encrypted** welcome guide and guest logins (generated, safe to publish)

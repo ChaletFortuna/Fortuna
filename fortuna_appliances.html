@@ -3,453 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chalet Fortuna - Appliance Manuals</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Appliance manuals — Chalet Fortuna, Zermatt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#2c3a2e">
+<link rel="stylesheet" href="fortuna.css?v=2026-09-17">
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-background: linear-gradient(135deg, #2c3a2e 0%, #5a3b22 100%);
-min-height: 100vh;
-padding: 20px;
-}
-
-.container {
-max-width: 1000px;
-margin: 0 auto;
-}
-
-.back-button {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-background: rgba(250, 246, 240, 0.95);
-color: #2c3a2e;
-padding: 10px 18px;
-border-radius: 8px;
-text-decoration: none;
-font-weight: 500;
-font-size: 14px;
-margin-bottom: 20px;
-transition: all 0.3s ease;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.back-button:hover {
-background: #fff;
-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-header {
-background: rgba(250, 246, 240, 0.95);
-border-radius: 12px;
-padding: 30px;
-margin-bottom: 30px;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-color: #2c3a2e;
-margin-bottom: 10px;
-font-size: 28px;
-}
-
-.subtitle {
-color: #666;
-font-size: 14px;
-}
-
-.category {
-background: rgba(250, 246, 240, 0.95);
-border-radius: 12px;
-padding: 30px;
-margin-bottom: 25px;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.category h2 {
-color: #7a5233;
-font-size: 20px;
-margin-bottom: 20px;
-padding-bottom: 15px;
-border-bottom: 3px solid #7a5233;
-}
-
-.manual-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-gap: 16px;
-}
-
-.manual-card {
-background: linear-gradient(135deg, #f5f7fa 0%, #e8ddd0 100%);
-border: 1px solid #e0e0e0;
-border-radius: 8px;
-padding: 20px;
-transition: all 0.3s ease;
-cursor: pointer;
-}
-
-.manual-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 8px 20px rgba(122, 82, 51, 0.2);
-background: linear-gradient(135deg, #7a5233 0%, #5a3b22 100%);
-}
-
-.manual-card:hover .manual-title,
-.manual-card:hover .manual-appliance,
-.manual-card:hover .manual-lang {
-color: white;
-}
-
-.manual-card a {
-text-decoration: none;
-display: flex;
-flex-direction: column;
-height: 100%;
-}
-
-.pdf-icon {
-font-size: 32px;
-margin-bottom: 12px;
-}
-
-.manual-title {
-font-weight: 600;
-font-size: 16px;
-color: #333;
-margin-bottom: 8px;
-transition: color 0.3s ease;
-}
-
-.manual-appliance {
-font-size: 12px;
-color: #666;
-margin-bottom: 8px;
-transition: color 0.3s ease;
-}
-
-.manual-lang {
-font-size: 11px;
-color: #999;
-margin-top: auto;
-padding-top: 12px;
-border-top: 1px solid #ddd;
-transition: color 0.3s ease;
-}
-
-.note {
-background: #fff3cd;
-border-left: 4px solid #ffc107;
-padding: 15px;
-border-radius: 4px;
-margin-top: 20px;
-font-size: 13px;
-color: #856404;
-}
-
-.note strong {
-display: block;
-margin-bottom: 5px;
-}
-
-footer {
-text-align: center;
-color: rgba(250, 246, 240, 0.8);
-font-size: 12px;
-margin-top: 30px;
-}
-
-@media (max-width: 768px) {
-.manual-grid {
-grid-template-columns: 1fr;
-}
-
-h1 {
-font-size: 22px;
-}
-
-.category h2 {
-font-size: 18px;
-}
-
+/* Page-specific styles only — colours, fonts, nav, buttons and footer live in fortuna.css */
+.page-head{background:var(--pine);color:#f4f1ea;padding:52px 0 46px}
+.page-head h1{color:#fff;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:600;line-height:1.1;margin-bottom:10px}
+.page-head p{color:var(--on-dark);max-width:620px;font-size:.98rem}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.jump a{text-decoration:none;color:#fff;font-size:.82rem;font-weight:500;border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:6px 14px;background:rgba(255,255,255,.08)}
+.jump a:hover{background:var(--gold);border-color:var(--gold)}
+main.container{padding-top:40px;padding-bottom:72px}
+.cat{padding:30px 36px 14px;margin-bottom:24px;scroll-margin-top:84px}
+.cat h2{font-size:1.8rem;font-weight:600;line-height:1.15;display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.cat-ico{font-size:1.2rem}
+.manual{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.manual-ico{flex:none;width:44px;height:44px;border-radius:50%;background:var(--cream-2);display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+.manual-name{flex:1;min-width:0}
+.manual-name b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--pine);line-height:1.2}
+.manual-name span{font-size:.82rem;color:var(--muted)}
+.manual-langs{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.manual-langs a{text-decoration:none;font-size:.8rem;font-weight:600;color:var(--wood);border:1px solid var(--line-strong);border-radius:20px;padding:7px 14px;white-space:nowrap;transition:.2s}
+.manual-langs a::after{content:" ↗";color:var(--gold)}
+.manual-langs a:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.manual-langs a:hover::after{color:#fff}
+@media(max-width:640px){
+  .cat{padding:22px 20px 8px}
+  .manual{flex-wrap:wrap}
+  .manual-langs{width:100%;justify-content:flex-start;padding-left:60px}
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Chalet <span>Fortuna</span></a>
+    <div class="nav-right">
+      <a href="guest.html">← <span class="nav-long">Back to the guest guide</span><span class="nav-short">Guest guide</span></a>
+    </div>
+  </div>
+</nav>
 
-<a href="guest.html" class="back-button">← Back to guest guide</a>
-
-<header>
-<h1>📖 Appliance Manuals</h1>
-<p class="subtitle">Find English, French & German manuals for all appliances at Chalet Fortuna</p>
+<header class="page-head">
+  <div class="container">
+    <div class="section-label">Guest area</div>
+    <h1>Appliance manuals</h1>
+    <p>How everything works in the apartment — manuals in English, French and German (some in Italian). Pick your appliance, then your language.</p>
+    <div class="jump"><a href="#climate">🌡️ Living &amp; climate</a><a href="#kitchen">🍳 Kitchen</a><a href="#laundry">🧺 Laundry</a><a href="#tv">📺 Entertainment</a><a href="#electric">⚡ Electrical systems</a></div>
+  </div>
 </header>
 
-<!-- LIVING & CLIMATE -->
-<div class="category">
-<h2>🌡️ Living & Climate Control</h2>
-<div class="manual-grid">
+<main class="container">
+  <!-- To add a manual: copy one <div class="manual">…</div> block and change the name, brand and Google Drive links. -->
 
-<!-- Danfoss Radiator - EN -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1aDeKR5OVqIhlaNCeUjsejx7bUrwEfY3k/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🌡️</div>
-<div class="manual-title">Radiator Thermostat</div>
-<div class="manual-appliance">Danfoss Ally™</div>
-<div class="manual-lang">English Manual</div>
-</a>
-</div>
+    <!-- ===== LIVING & CLIMATE ===== -->
+    <section class="panel cat" id="climate">
+      <h2><span class="cat-ico">🌡️</span>Living &amp; climate</h2>
+      <div class="manual">
+        <span class="manual-ico">🌡️</span>
+        <div class="manual-name"><b>Radiator thermostat</b><span>Danfoss Ally™</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1aDeKR5OVqIhlaNCeUjsejx7bUrwEfY3k/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
+          <a href="https://drive.google.com/file/d/13-buYyTfqZ6dkatYB8R_QvemQt4rkiOA/view?usp=drivesdk" target="_blank" rel="noopener">Français</a>
+          <a href="https://drive.google.com/file/d/1v-3bJww5oPzD93eryQGzHuhL8JuT0--V/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch</a>
+        </div>
+      </div>
+    </section>
 
-<!-- Danfoss Radiator - FR -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/13-buYyTfqZ6dkatYB8R_QvemQt4rkiOA/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🌡️</div>
-<div class="manual-title">Radiateur Thermostat</div>
-<div class="manual-appliance">Danfoss Ally™</div>
-<div class="manual-lang">Manuel Français</div>
-</a>
-</div>
+    <!-- ===== KITCHEN ===== -->
+    <section class="panel cat" id="kitchen">
+      <h2><span class="cat-ico">🍳</span>Kitchen</h2>
+      <div class="manual">
+        <span class="manual-ico">🍽️</span>
+        <div class="manual-name"><b>Dishwasher — quick guide</b><span>Electrolux</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1-eoKTKVN6IpxRtbsRnpDvMhy6vg-qkaU/view?usp=drivesdk" target="_blank" rel="noopener">English · Deutsch</a>
+          <a href="https://drive.google.com/file/d/1F3r5jazIMgt2Ht1pj_UiSR-zc0PcLXEy/view?usp=drivesdk" target="_blank" rel="noopener">Français · Italiano</a>
+        </div>
+      </div>
+      <div class="manual">
+        <span class="manual-ico">📖</span>
+        <div class="manual-name"><b>Dishwasher — full manual</b><span>Electrolux</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/13wnEajyuE6fE-lwm-wdoSfvTfcsvDBcO/view?usp=drivesdk" target="_blank" rel="noopener">English · Deutsch</a>
+          <a href="https://drive.google.com/file/d/1sEASZGZA48uBGiicKHFPK5xJuULh8R_m/view?usp=drivesdk" target="_blank" rel="noopener">Français · Italiano</a>
+        </div>
+      </div>
+      <div class="manual">
+        <span class="manual-ico">🔥</span>
+        <div class="manual-name"><b>Induction hob</b><span>Bosch PKF6..FP..</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1qqRWzvHj3i2SmWsIN9m_lDsKyZ5CeQXY/view?usp=drivesdk" target="_blank" rel="noopener">Français · Deutsch</a>
+        </div>
+      </div>
+      <div class="manual">
+        <span class="manual-ico">🍞</span>
+        <div class="manual-name"><b>Oven</b><span>Electrolux</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1Tnv_SKfDZHAHhCWsezUr-QceetkAKAcb/view?usp=drivesdk" target="_blank" rel="noopener">Quick guide (multilingual)</a>
+          <a href="https://drive.google.com/file/d/1ayAmwTxreKbAXAFdHE7IAZKYfPHrVQvZ/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
+          <a href="https://drive.google.com/file/d/1KNr3b0YL8QyTyOYCmPr3uO2qI3RsWKCh/view?usp=drivesdk" target="_blank" rel="noopener">Français</a>
+        </div>
+      </div>
+      <div class="manual">
+        <span class="manual-ico">📟</span>
+        <div class="manual-name"><b>Microwave / combi-oven</b><span>Electrolux</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1WI-yNgwLds47OgZrVPdVxQ90D3_4O1NT/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch · English</a>
+        </div>
+      </div>
+    </section>
 
-<!-- Danfoss Radiator - DE -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1v-3bJww5oPzD93eryQGzHuhL8JuT0--V/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🌡️</div>
-<div class="manual-title">Heizkörper Thermostat</div>
-<div class="manual-appliance">Danfoss Ally™</div>
-<div class="manual-lang">Deutsches Handbuch</div>
-</a>
-</div>
+    <!-- ===== LAUNDRY ===== -->
+    <section class="panel cat" id="laundry">
+      <h2><span class="cat-ico">🧺</span>Laundry</h2>
+      <div class="manual">
+        <span class="manual-ico">🌀</span>
+        <div class="manual-name"><b>Tumble dryer</b><span>Miele</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1FToDONXFjPRTufOM7lfmKXXcjKWnbgiU/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
+          <a href="https://drive.google.com/file/d/1QPq0lhuKLuiRxph8tUxMGYTNcSzycaXQ/view?usp=drivesdk" target="_blank" rel="noopener">Français</a>
+          <a href="https://drive.google.com/file/d/1vlP3Tf2adCz__bj7YNg7MZne8PB9AKtD/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch</a>
+          <a href="https://drive.google.com/file/d/1Db2yrSfKxPYg8RSjZTA17DcVutWDCNN3/view?usp=drivesdk" target="_blank" rel="noopener">Italiano</a>
+        </div>
+      </div>
+    </section>
 
-</div>
-</div>
+    <!-- ===== ENTERTAINMENT ===== -->
+    <section class="panel cat" id="tv">
+      <h2><span class="cat-ico">📺</span>Entertainment</h2>
+      <div class="manual">
+        <span class="manual-ico">📺</span>
+        <div class="manual-name"><b>Smart TV</b><span>Samsung (2025 model)</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/17o3YeAk6CrefgtGYR171iZG97NCu1hXc/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
+          <a href="https://drive.google.com/file/d/1ydyxmINuIJ7q0tIHCf4q6GDYeOpj8Rv2/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch</a>
+        </div>
+      </div>
+      <div class="manual">
+        <span class="manual-ico">🎮</span>
+        <div class="manual-name"><b>Smart remote control</b><span>Samsung SolarCell Remote</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1s7w-Hzll6rSeMPO8JvxlJaDI0TJAQOTW/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch · English</a>
+        </div>
+      </div>
+    </section>
 
-<!-- KITCHEN -->
-<div class="category">
-<h2>🍳 Kitchen</h2>
-<div class="manual-grid">
+    <!-- ===== ELECTRICAL SYSTEMS ===== -->
+    <section class="panel cat" id="electric">
+      <h2><span class="cat-ico">⚡</span>Electrical systems</h2>
+      <div class="manual">
+        <span class="manual-ico">⚡</span>
+        <div class="manual-name"><b>Electrical panel</b><span>Main distribution</span></div>
+        <div class="manual-langs">
+          <a href="https://drive.google.com/file/d/1UYjOrJHfrp_DH5SnKbCO34X5B3hOOyds/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
+          <a href="https://drive.google.com/file/d/1zAkX_WUfQlIVotxJN1WJed1PiQucsCQh/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch</a>
+        </div>
+      </div>
+    </section>
 
-<!-- Electrolux Dishwasher - EN/DE Quick -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1-eoKTKVN6IpxRtbsRnpDvMhy6vg-qkaU/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🍽️</div>
-<div class="manual-title">Dishwasher Quick Guide</div>
-<div class="manual-appliance">Electrolux</div>
-<div class="manual-lang">English & German</div>
-</a>
-</div>
+  <div class="g-callout g-contact"><b>Tip.</b> Manuals open in Google Drive; for easier reading, download the PDF to your device. Any question about an appliance? Write to <a href="mailto:chalet.fortuna.zermatt@gmail.com?Subject=Chalet%20Fortuna%20%E2%80%94%20appliance%20question">chalet.fortuna.zermatt@gmail.com</a> — we are happy to help.</div>
+</main>
 
-<!-- Electrolux Dishwasher - FR/IT Quick -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1F3r5jazIMgt2Ht1pj_UiSR-zc0PcLXEy/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🍽️</div>
-<div class="manual-title">Lave-vaisselle Guide</div>
-<div class="manual-appliance">Electrolux</div>
-<div class="manual-lang">Français & Italiano</div>
-</a>
-</div>
-
-<!-- Electrolux Dishwasher - EN/DE Full Manual -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/13wnEajyuE6fE-lwm-wdoSfvTfcsvDBcO/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">📖</div>
-<div class="manual-title">Dishwasher Manual</div>
-<div class="manual-appliance">Electrolux (Complete)</div>
-<div class="manual-lang">English & German</div>
-</a>
-</div>
-
-<!-- Electrolux Dishwasher - FR/IT Full Manual -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1sEASZGZA48uBGiicKHFPK5xJuULh8R_m/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">📖</div>
-<div class="manual-title">Manuel Lave-vaisselle</div>
-<div class="manual-appliance">Electrolux (Complet)</div>
-<div class="manual-lang">Français & Italiano</div>
-</a>
-</div>
-
-<!-- Bosch Induction Hob - FR/DE -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1qqRWzvHj3i2SmWsIN9m_lDsKyZ5CeQXY/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🔥</div>
-<div class="manual-title">Induction Hob</div>
-<div class="manual-appliance">Bosch PKF6..FP..</div>
-<div class="manual-lang">French & German</div>
-</a>
-</div>
-
-<!-- Electrolux Oven - Quick Guide -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1Tnv_SKfDZHAHhCWsezUr-QceetkAKAcb/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🍞</div>
-<div class="manual-title">Oven Quick Guide</div>
-<div class="manual-appliance">Electrolux</div>
-<div class="manual-lang">Multilingual</div>
-</a>
-</div>
-
-<!-- Electrolux Oven - EN Manual -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1ayAmwTxreKbAXAFdHE7IAZKYfPHrVQvZ/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🍞</div>
-<div class="manual-title">Oven Manual</div>
-<div class="manual-appliance">Electrolux</div>
-<div class="manual-lang">English</div>
-</a>
-</div>
-
-<!-- Electrolux Oven - FR Manual -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1KNr3b0YL8QyTyOYCmPr3uO2qI3RsWKCh/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🍞</div>
-<div class="manual-title">Manuel Four</div>
-<div class="manual-appliance">Electrolux</div>
-<div class="manual-lang">Français</div>
-</a>
-</div>
-
-<!-- Electrolux Microwave/Combi-Oven - DE/EN -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1WI-yNgwLds47OgZrVPdVxQ90D3_4O1NT/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">📟</div>
-<div class="manual-title">Microwave/Combi-Oven</div>
-<div class="manual-appliance">Electrolux</div>
-<div class="manual-lang">German & English</div>
-</a>
-</div>
-
-</div>
-</div>
-
-<!-- LAUNDRY -->
-<div class="category">
-<h2>🧺 Laundry</h2>
-<div class="manual-grid">
-
-<!-- Miele Dryer - UK -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1FToDONXFjPRTufOM7lfmKXXcjKWnbgiU/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🌀</div>
-<div class="manual-title">Tumble Dryer</div>
-<div class="manual-appliance">Miele</div>
-<div class="manual-lang">English Manual</div>
-</a>
-</div>
-
-<!-- Miele Dryer - DE -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1vlP3Tf2adCz__bj7YNg7MZne8PB9AKtD/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🌀</div>
-<div class="manual-title">Wäschetrockner</div>
-<div class="manual-appliance">Miele</div>
-<div class="manual-lang">Deutsches Handbuch</div>
-</a>
-</div>
-
-<!-- Miele Dryer - FR -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1QPq0lhuKLuiRxph8tUxMGYTNcSzycaXQ/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🌀</div>
-<div class="manual-title">Sèche-linge</div>
-<div class="manual-appliance">Miele</div>
-<div class="manual-lang">Manuel Français</div>
-</a>
-</div>
-
-<!-- Miele Dryer - IT -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1Db2yrSfKxPYg8RSjZTA17DcVutWDCNN3/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🌀</div>
-<div class="manual-title">Asciugatrice</div>
-<div class="manual-appliance">Miele</div>
-<div class="manual-lang">Manuale Italiano</div>
-</a>
-</div>
-
-</div>
-</div>
-
-<!-- ENTERTAINMENT & SYSTEMS -->
-<div class="category">
-<h2>📺 Entertainment</h2>
-<div class="manual-grid">
-
-<!-- Samsung TV - DE -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1ydyxmINuIJ7q0tIHCf4q6GDYeOpj8Rv2/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">📺</div>
-<div class="manual-title">Smart TV</div>
-<div class="manual-appliance">Samsung (2025 Model)</div>
-<div class="manual-lang">German Manual</div>
-</a>
-</div>
-
-<!-- Samsung TV - EN -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/17o3YeAk6CrefgtGYR171iZG97NCu1hXc/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">📺</div>
-<div class="manual-title">Smart TV</div>
-<div class="manual-appliance">Samsung (2025 Model)</div>
-<div class="manual-lang">English Manual</div>
-</a>
-</div>
-
-<!-- Samsung TV Remote -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1s7w-Hzll6rSeMPO8JvxlJaDI0TJAQOTW/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">🎮</div>
-<div class="manual-title">Smart Remote Control</div>
-<div class="manual-appliance">Samsung SolarCell Remote</div>
-<div class="manual-lang">German & English</div>
-</a>
-</div>
-
-</div>
-</div>
-
-<!-- ELECTRICAL SYSTEMS -->
-<div class="category">
-<h2>⚡ Electrical Systems</h2>
-<div class="manual-grid">
-
-<!-- Electrical Panel - EN -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1UYjOrJHfrp_DH5SnKbCO34X5B3hOOyds/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">⚡</div>
-<div class="manual-title">Electrical Panel</div>
-<div class="manual-appliance">Main Distribution</div>
-<div class="manual-lang">English Manual</div>
-</a>
-</div>
-
-<!-- Electrical Panel - DE -->
-<div class="manual-card">
-<a href="https://drive.google.com/file/d/1zAkX_WUfQlIVotxJN1WJed1PiQucsCQh/view?usp=drivesdk" target="_blank">
-<div class="pdf-icon">⚡</div>
-<div class="manual-title">Stromverteilung</div>
-<div class="manual-appliance">Main Distribution</div>
-<div class="manual-lang">Deutsches Handbuch</div>
-</a>
-</div>
-
-</div>
-</div>
-
-<div class="note">
-<strong>💡 Tip:</strong> All manuals open in Google Drive. For best viewing, download the PDF to your device. If you have any questions about operating an appliance, please contact us and we'll be happy to help.
-</div>
-
-<footer>
-<p>Chalet Fortuna, Zermatt ⛰️</p>
+<footer class="foot-mini">
+  <div class="container">© <span id="year"></span> Chalet Fortuna, Zermatt · <a href="index.html">chaletfortuna.github.io/Fortuna</a></div>
 </footer>
-
-</div>
-
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

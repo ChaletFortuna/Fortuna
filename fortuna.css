@@ -1,0 +1,114 @@
+/* =====================================================================
+   CHALET FORTUNA — shared design system
+   One stylesheet for every page (index.html, guest.html,
+   fortuna_appliances.html) so the whole site keeps the same mood:
+   pine green · warm wood · cream · gold, Cormorant Garamond + Inter.
+   Change a colour or a font HERE and it changes everywhere.
+   ===================================================================== */
+
+/* ---------- 1. Design tokens ---------- */
+:root{
+  /* colour */
+  --pine:#2c3a2e;        /* dark green: headings, dark bands            */
+  --pine-soft:#eef3ec;   /* pale green: "available", contact call-outs   */
+  --wood:#7a5233;        /* links, sub-headings                          */
+  --wood-dark:#5a3b22;   /* footer                                       */
+  --cream:#faf6f0;       /* page background                              */
+  --cream-2:#f2ebe0;     /* alternate band, chips                        */
+  --cream-3:#eadfce;     /* hover on cream-2                             */
+  --ink:#2b2620;         /* body text                                    */
+  --ink-soft:#4d453c;    /* paragraphs                                   */
+  --muted:#7d7367;       /* captions, hints                              */
+  --gold:#b8894a;        /* accent: labels, primary buttons              */
+  --gold-dark:#a2763b;   /* accent hover                                 */
+  --on-dark:#cfd6cd;     /* secondary text on pine                       */
+  --booked:#d9c9b8;
+  --red:#a8402f;
+  --white:#fff;
+  --line:rgba(122,82,51,.14);        /* hairlines and card borders       */
+  --line-strong:rgba(122,82,51,.3);  /* inputs, pills                    */
+  /* shape */
+  --radius:14px; --radius-sm:10px; --pill:30px;
+  --shadow:0 10px 40px rgba(43,38,32,.12);
+  --shadow-sm:0 4px 18px rgba(43,38,32,.07);
+  /* type */
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --nav-h:64px;
+}
+
+/* ---------- 2. Base ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.serif{font-family:var(--serif);color:var(--pine)}
+img{max-width:100%;display:block}
+a{color:var(--wood)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.section-label{letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;font-weight:600;color:var(--gold);margin-bottom:10px}
+
+/* ---------- 3. Navigation bar ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:14px}
+.brand{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--pine);text-decoration:none;white-space:nowrap}
+.brand span{color:var(--gold)}
+.nav-links{display:flex;gap:22px;align-items:center;list-style:none}
+.nav-links a,.nav-right a{text-decoration:none;font-size:.88rem;font-weight:500;color:var(--ink);white-space:nowrap}
+.nav-links a:hover,.nav-right a:hover{color:var(--gold)}
+.nav-links a.nav-guest{border:1px solid rgba(184,137,74,.55);border-radius:20px;padding:6px 14px;color:var(--gold);font-weight:600}
+.nav-links a.nav-guest:hover{background:var(--gold);color:#fff}
+.nav-right{display:flex;gap:14px;align-items:center;font-size:.88rem}
+.nav-short{display:none}
+.lang{display:flex;gap:4px;border:1px solid var(--line-strong);border-radius:20px;padding:3px}
+.lang button{border:0;background:none;font:600 .75rem var(--sans);padding:5px 10px;border-radius:16px;cursor:pointer;color:var(--muted)}
+.lang button.active{background:var(--pine);color:#fff}
+.burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--pine)}
+
+/* ---------- 4. Buttons ---------- */
+.btn{display:inline-block;padding:13px 28px;border-radius:var(--pill);text-decoration:none;font:600 .92rem var(--sans);border:0;cursor:pointer;transition:.2s;text-align:center}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-dark)}
+.btn-white{background:#fff;color:var(--pine)}
+.btn-white:hover{background:var(--cream-2)}
+.btn-outline{border:1.5px solid #fff;color:#fff}                /* on photos */
+.btn-outline:hover{background:#fff;color:var(--pine)}
+.btn-ghost{border:1.5px solid rgba(44,58,46,.35);color:var(--pine);background:none}   /* on cream */
+.btn-ghost:hover{background:var(--cream-2)}
+.on-dark .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}                      /* on pine  */
+.on-dark .btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-sm{padding:8px 16px;font-size:.8rem}
+
+/* ---------- 5. Surfaces ---------- */
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.g-callout{background:var(--cream-2);border-left:4px solid var(--gold);border-radius:8px;padding:14px 18px;margin:14px 0 18px;font-size:.92rem;color:var(--ink-soft)}
+.g-warn{background:#fbeeea;border-left-color:var(--red)}
+.g-contact{background:var(--pine-soft);border-left-color:var(--pine)}
+
+/* ---------- 6. Lightbox ---------- */
+.lightbox{position:fixed;inset:0;background:rgba(20,18,15,.93);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:86vh;border-radius:8px}
+
+/* ---------- 7. Footer ---------- */
+footer{background:var(--wood-dark);color:#e8ddd0;padding:48px 0 32px}
+footer a{color:#f0e6d8}
+footer .brand{color:#fff;font-size:1.5rem}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;margin-bottom:30px}
+footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid rgba(255,255,255,.15);padding-top:22px}
+footer.foot-mini{padding:28px 0;font-size:.85rem;text-align:center}
+
+/* ---------- 8. Responsive & motion ---------- */
+@media(max-width:1000px){
+  .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--cream);flex-direction:column;padding:18px;border-bottom:1px solid var(--line-strong)}
+  .nav-links.open{display:flex}
+  .burger{display:block}
+}
+@media(max-width:560px){
+  .nav-long{display:none}
+  .nav-short{display:inline}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation-duration:.01ms!important}
+}

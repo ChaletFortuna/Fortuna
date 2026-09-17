@@ -8,83 +8,66 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#2c3a2e">
+<link rel="stylesheet" href="fortuna.css?v=2026-09-17">
 <style>
-:root{
-  --pine:#2c3a2e; --wood:#7a5233; --wood-dark:#5a3b22; --cream:#faf6f0; --cream-2:#f2ebe0;
-  --ink:#2b2620; --muted:#7d7367; --gold:#b8894a; --white:#fff; --booked:#d9c9b8;
-  --radius:14px; --shadow:0 10px 40px rgba(43,38,32,.12);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
-h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
-img{max-width:100%;display:block}
-a{color:var(--wood)}
-.container{max-width:1120px;margin:0 auto;padding:0 24px}
+/* Page-specific styles only — colours, fonts, nav, buttons and footer live in fortuna.css */
 section{padding:72px 0}
-.section-label{letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;font-weight:600;color:var(--gold);margin-bottom:10px}
-h2{font-size:2.4rem;font-weight:600;color:var(--pine);margin-bottom:22px;line-height:1.15}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(122,82,51,.15)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--pine);text-decoration:none}
-.brand span{color:var(--gold)}
-.nav-links{display:flex;gap:26px;align-items:center;list-style:none}
-.nav-links a{text-decoration:none;font-size:.88rem;font-weight:500;color:var(--ink)}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a.nav-guest{border:1px solid rgba(184,137,74,.55);border-radius:20px;padding:6px 14px;color:var(--gold);font-weight:600}
-.nav-links a.nav-guest:hover{background:var(--gold);color:#fff}
-.lang{display:flex;gap:4px;border:1px solid rgba(122,82,51,.3);border-radius:20px;padding:3px}
-.lang button{border:0;background:none;font:600 .75rem 'Inter';padding:5px 10px;border-radius:16px;cursor:pointer;color:var(--muted)}
-.lang button.active{background:var(--pine);color:#fff}
-.burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--pine)}
+h2{font-size:2.4rem;font-weight:600;margin-bottom:22px;line-height:1.15}
 
 /* HERO */
 .hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;background:url('images/view.jpg') center 35%/cover no-repeat}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,20,.15) 0%,rgba(20,25,20,.05) 40%,rgba(20,25,20,.72) 100%)}
-.hero-content{position:relative;z-index:2;color:#fff;padding:0 0 64px;width:100%}
-.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;line-height:1.05}
+.hero-content{position:relative;z-index:2;color:#fff;padding-bottom:64px;width:100%}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;line-height:1.05;color:#fff}
 .hero p.tag{font-size:1.15rem;margin:14px 0 26px;max-width:560px;color:#f0ead9}
 .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.badge{background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:6px 14px;font-size:.82rem;font-weight:500}
-.btn{display:inline-block;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:600;font-size:.92rem;transition:.2s}
-.btn-gold{background:var(--gold);color:#fff}
-.btn-gold:hover{background:#a2763b}
-.btn-outline{border:1.5px solid #fff;color:#fff;margin-left:10px}
-.btn-outline:hover{background:#fff;color:var(--pine)}
+.badge{background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:6px 14px;font-size:.82rem;font-weight:500}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn svg{vertical-align:-3px;margin-right:7px}
 
 /* STATS */
 .stats{background:var(--pine);color:#fff;padding:26px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;text-align:center}
-.stat b{display:block;font-family:'Cormorant Garamond';font-size:1.9rem;color:var(--gold)}
-.stat span{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#cfd6cd}
+.stat b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--gold)}
+.stat span{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--on-dark)}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
 .about-grid img{border-radius:var(--radius);box-shadow:var(--shadow)}
-.about p{margin-bottom:16px;color:#4d453c}
+.about p{margin-bottom:16px;color:var(--ink-soft)}
 
 /* GALLERY */
 .gallery{background:var(--cream-2)}
 .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:12px}
-.gal-grid a{overflow:hidden;border-radius:10px;display:block}
+.gal-grid a{overflow:hidden;border-radius:var(--radius-sm);display:block}
 .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .gal-grid a:hover img{transform:scale(1.06)}
 .gal-grid a:nth-child(1){grid-column:span 2;grid-row:span 2}
 .plan-link{margin-top:20px;font-size:.92rem}
-
-/* LIGHTBOX */
-.lightbox{position:fixed;inset:0;background:rgba(20,18,15,.93);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column}
-.lightbox.open{display:flex}
-.lightbox img{max-width:90vw;max-height:82vh;border-radius:8px}
 .lightbox .lb-close{position:absolute;top:20px;right:28px;color:#fff;font-size:2rem;background:none;border:0;cursor:pointer}
 .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);color:#fff;border:0;font-size:1.6rem;width:48px;height:48px;border-radius:50%;cursor:pointer}
 .lb-prev{left:20px}.lb-next{right:20px}
 
+/* 3D TOUR */
+.tour-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:26px}
+.tour-head h2{margin-bottom:10px}
+.tour-head p{color:var(--ink-soft);max-width:620px}
+.tour-frame{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--pine)}
+.tour-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tour-poster{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;padding:0;color:#fff;font-family:var(--sans);
+  background:linear-gradient(180deg,rgba(20,25,20,.25),rgba(20,25,20,.62)),url('images/living2.jpg') center/cover no-repeat;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:.3s}
+.tour-poster:hover{filter:brightness(1.08)}
+.tour-play{width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:transform .25s}
+.tour-poster:hover .tour-play{transform:scale(1.07)}
+.tour-poster b{font-family:var(--serif);font-size:1.7rem;font-weight:600;text-shadow:0 1px 12px rgba(20,25,20,.6)}
+.tour-poster small{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#f0ead9}
+
 /* AMENITIES */
 .amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.amen{background:#fff;border:1px solid rgba(122,82,51,.12);border-radius:10px;padding:14px 18px;font-size:.9rem;display:flex;gap:12px;align-items:center}
+.amen{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 18px;font-size:.9rem;display:flex;gap:12px;align-items:center}
 .amen svg{flex:none;color:var(--gold)}
 .note{margin-top:22px;font-size:.86rem;color:var(--muted);font-style:italic}
 
@@ -94,28 +77,25 @@ nav{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.92);backdrop-f
 .book-grid{display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:start}
 .cal-wrap{background:#fff;color:var(--ink);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
 .cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.cal-head h3{font-size:1.5rem;color:var(--pine)}
+.cal-head h3{font-size:1.5rem}
 .cal-head button{background:var(--cream-2);border:0;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;color:var(--pine)}
+.cal-head button:hover{background:var(--cream-3)}
 .cal-months{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .cal-month table{width:100%;border-collapse:collapse;font-size:.82rem}
-.cal-month caption{font-weight:600;margin-bottom:8px;font-family:'Cormorant Garamond';font-size:1.15rem;color:var(--pine)}
+.cal-month caption{font-weight:600;margin-bottom:8px;font-family:var(--serif);font-size:1.15rem;color:var(--pine)}
 .cal-month th{font-weight:600;color:var(--muted);padding:4px 0;font-size:.7rem;text-transform:uppercase}
 .cal-month td{text-align:center;padding:0}
 .cal-month td div{width:34px;height:34px;line-height:34px;margin:2px auto;border-radius:50%}
-td.free div{background:#eef3ec;color:var(--pine);font-weight:500}
+td.free div{background:var(--pine-soft);color:var(--pine);font-weight:500}
 td.booked div{background:var(--booked);color:#8c7458;text-decoration:line-through}
 td.past div{color:#c9c2b8}
 .cal-legend{display:flex;gap:20px;margin-top:16px;font-size:.8rem;color:var(--muted)}
 .cal-legend i{display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:6px;vertical-align:-2px}
-.cal-legend .i-free{background:#eef3ec;border:1px solid #cfdccb}
+.cal-legend .i-free{background:var(--pine-soft);border:1px solid #cfdccb}
 .cal-legend .i-booked{background:var(--booked)}
 .cal-updated{margin-top:10px;font-size:.74rem;color:var(--muted)}
-.book-side .btn{display:block;text-align:center;margin-bottom:12px;margin-left:0}
-.btn-white{background:#fff;color:var(--pine)}
-.btn-white:hover{background:var(--cream-2)}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
-.btn-ghost:hover{background:rgba(255,255,255,.1)}
-.book-side p{font-size:.9rem;color:#cfd6cd;margin-bottom:18px}
+.book-side .btn{display:block;margin-bottom:12px}
+.book-side p{font-size:.9rem;color:var(--on-dark);margin-bottom:18px}
 .book-side .direct{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:.92rem}
 .book-side .direct a{color:var(--gold);text-decoration:none;font-weight:600}
 
@@ -124,26 +104,19 @@ td.past div{color:#c9c2b8}
 .loc-grid img{border-radius:var(--radius);box-shadow:var(--shadow)}
 .loc-item{display:flex;gap:14px;margin-bottom:18px}
 .loc-item b{display:block;color:var(--pine)}
-.loc-item span{font-size:.9rem;color:#4d453c}
-.loc-num{flex:none;width:42px;height:42px;border-radius:50%;background:var(--cream-2);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond';font-weight:700;font-size:1.2rem}
+.loc-item span{font-size:.9rem;color:var(--ink-soft)}
+.loc-num{flex:none;width:42px;height:42px;border-radius:50%;background:var(--cream-2);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:1.2rem}
 
 /* INFO */
 .info{background:var(--cream-2)}
 .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.info-card{background:#fff;border-radius:var(--radius);padding:26px;border:1px solid rgba(122,82,51,.1)}
-.info-card h3{color:var(--pine);font-size:1.3rem;margin-bottom:10px}
-.info-card p{font-size:.9rem;color:#4d453c}
+.info-card{background:#fff;border-radius:var(--radius);padding:26px;border:1px solid var(--line)}
+.info-card h3{font-size:1.3rem;margin-bottom:10px}
+.info-card p{font-size:.9rem;color:var(--ink-soft)}
 .guest-cta{margin-top:22px;background:var(--pine);color:#f4f1ea;border-radius:var(--radius);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
 .guest-cta h3{color:#fff;font-size:1.6rem;margin-bottom:6px}
-.guest-cta p{font-size:.9rem;color:#cfd6cd;max-width:640px}
+.guest-cta p{font-size:.9rem;color:var(--on-dark);max-width:640px}
 .guest-cta .btn{flex:none}
-
-/* FOOTER */
-footer{background:var(--wood-dark);color:#e8ddd0;padding:48px 0 32px}
-.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;margin-bottom:30px}
-footer a{color:#f0e6d8}
-footer .brand{color:#fff;font-size:1.5rem}
-footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid rgba(255,255,255,.15);padding-top:22px}
 
 @media(max-width:900px){
   .about-grid,.book-grid,.loc-grid{grid-template-columns:1fr}
@@ -151,11 +124,15 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
   .amen-grid,.info-grid{grid-template-columns:1fr 1fr}
   .stats-grid{grid-template-columns:repeat(3,1fr);row-gap:20px}
   .cal-months{grid-template-columns:1fr}
-  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--cream);flex-direction:column;padding:18px;border-bottom:1px solid rgba(122,82,51,.2)}
-  .nav-links.open{display:flex}
-  .burger{display:block}
 }
-@media(max-width:560px){.amen-grid,.info-grid{grid-template-columns:1fr}}
+@media(max-width:560px){
+  .amen-grid,.info-grid{grid-template-columns:1fr}
+  section{padding:56px 0}
+  h2{font-size:2rem}
+  .tour-frame{aspect-ratio:4/5}
+  .tour-play{width:72px;height:72px}
+  .tour-poster b{font-size:1.4rem}
+}
 </style>
 </head>
 <body>
@@ -166,6 +143,7 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-i18n="nav_about">The Apartment</a></li>
       <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+      <li><a href="#tour" data-i18n="nav_tour">3D tour</a></li>
       <li><a href="#amenities" data-i18n="nav_amenities">Amenities</a></li>
       <li><a href="#booking" data-i18n="nav_booking">Availability</a></li>
       <li><a href="#location" data-i18n="nav_location">Location</a></li>
@@ -192,8 +170,11 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
     </div>
     <h1 data-i18n="hero_title">Your alpine home<br>facing the Matterhorn</h1>
     <p class="tag" data-i18n="hero_tag">A sunny, cosy 3-bedroom apartment in a traditional wooden chalet in the heart of Zermatt — 5 minutes from the Sunnegga funicular.</p>
-    <a href="#booking" class="btn btn-gold" data-i18n="hero_cta">Check availability</a>
-    <a href="#gallery" class="btn btn-outline" data-i18n="hero_cta2">View photos</a>
+    <div class="hero-cta">
+      <a href="#booking" class="btn btn-gold" data-i18n="hero_cta">Check availability</a>
+      <a href="#tour" class="btn btn-outline"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg><span data-i18n="hero_cta3">3D virtual visit</span></a>
+      <a href="#gallery" class="btn btn-outline" data-i18n="hero_cta2">View photos</a>
+    </div>
   </div>
 </header>
 
@@ -249,6 +230,26 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
   <button class="lb-nav lb-next" id="lbNext">›</button>
 </div>
 
+<section id="tour">
+  <div class="container">
+    <div class="tour-head">
+      <div>
+        <div class="section-label" data-i18n="tour_label">3D virtual visit</div>
+        <h2 data-i18n="tour_title">Walk through the apartment</h2>
+        <p data-i18n="tour_p">Explore the apartment as if you were there: move freely from room to room and look around in 360° in this interactive 3D tour.</p>
+      </div>
+      <a class="btn btn-ghost" id="tourLink" href="https://my.matterport.com/show/?m=6ndDJUqfJSH" target="_blank" rel="noopener" data-i18n="tour_full">Open in full screen ↗</a>
+    </div>
+    <div class="tour-frame" id="tourFrame">
+      <button class="tour-poster" id="tourPoster" type="button">
+        <span class="tour-play"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></span>
+        <b data-i18n="tour_start">Start the 3D visit</b>
+        <small>Matterport</small>
+      </button>
+    </div>
+  </div>
+</section>
+
 <section id="amenities">
   <div class="container">
     <div class="section-label" data-i18n="amen_label">Comfort</div>
@@ -258,7 +259,7 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
   </div>
 </section>
 
-<section id="booking" class="book">
+<section id="booking" class="book on-dark">
   <div class="container">
     <div class="section-label" data-i18n="book_label">Plan your stay</div>
     <h2 data-i18n="book_title">Availability &amp; booking</h2>
@@ -300,7 +301,7 @@ footer small{color:#bfae9b;display:block;text-align:center;border-top:1px solid 
       <div class="loc-item"><div class="loc-num">5′</div><div><b data-i18n="loc1_t">Sunnegga funicular</b><span data-i18n="loc1_s">A 5-minute walk to the departure of the mountain metro.</span></div></div>
       <div class="loc-item"><div class="loc-num">3′</div><div><b data-i18n="loc2_t">Ski bus stop</b><span data-i18n="loc2_s">The easiest way to reach the Klein Matterhorn ski area, 3 minutes on foot.</span></div></div>
       <div class="loc-item"><div class="loc-num">7′</div><div><b data-i18n="loc3_t">Gornergrat Bahn</b><span data-i18n="loc3_s">Approximately 7 minutes on foot.</span></div></div>
-      <p style="font-size:.9rem;color:#4d453c"><span data-i18n="loc_more">More information on the resort and village at</span> <a href="https://www.zermatt.ch" target="_blank" rel="noopener">zermatt.ch</a></p>
+      <p style="font-size:.9rem;color:var(--ink-soft)"><span data-i18n="loc_more">More information on the resort and village at</span> <a href="https://www.zermatt.ch" target="_blank" rel="noopener">zermatt.ch</a></p>
     </div>
   </div>
 </section>
@@ -359,7 +360,10 @@ en:{
   badge_superhost:"Superhost · 15 years",badge_fav:"Guest Favourite",
   hero_title:"Your alpine home<br>facing the Matterhorn",
   hero_tag:"A sunny, cosy 3-bedroom apartment in a traditional wooden chalet in the heart of Zermatt — 5 minutes from the Sunnegga funicular.",
-  hero_cta:"Check availability",hero_cta2:"View photos",
+  hero_cta:"Check availability",hero_cta2:"View photos",hero_cta3:"3D virtual visit",
+  nav_tour:"3D tour",tour_label:"3D virtual visit",tour_title:"Walk through the apartment",
+  tour_p:"Explore the apartment as if you were there: move freely from room to room and look around in 360° in this interactive 3D tour.",
+  tour_full:"Open in full screen ↗",tour_start:"Start the 3D visit",
   stat_guests:"Guests",stat_bedrooms:"Bedrooms",stat_beds:"Beds",stat_baths:"Bathrooms",stat_loc:"Location rating",
   about_label:"Welcome",about_title:"“Fortuna” means good luck",
   about_p1:"…and we hope you will be just as happy in our home in this fantastic destination as we are every time we go there. Chalet Fortuna is a haven of peace where happiness and relaxation await.",
@@ -394,7 +398,10 @@ fr:{
   badge_superhost:"Superhôte · 15 ans",badge_fav:"Coup de cœur voyageurs",
   hero_title:"Votre refuge alpin<br>face au Cervin",
   hero_tag:"Un appartement ensoleillé et chaleureux de 3 chambres dans un chalet en bois traditionnel au cœur de Zermatt — à 5 minutes du funiculaire de Sunnegga.",
-  hero_cta:"Voir les disponibilités",hero_cta2:"Voir les photos",
+  hero_cta:"Voir les disponibilités",hero_cta2:"Voir les photos",hero_cta3:"Visite virtuelle 3D",
+  nav_tour:"Visite 3D",tour_label:"Visite virtuelle 3D",tour_title:"Parcourez l'appartement",
+  tour_p:"Explorez l'appartement comme si vous y étiez : déplacez-vous librement de pièce en pièce et regardez autour de vous à 360° grâce à cette visite 3D interactive.",
+  tour_full:"Ouvrir en plein écran ↗",tour_start:"Démarrer la visite 3D",
   stat_guests:"Voyageurs",stat_bedrooms:"Chambres",stat_beds:"Lits",stat_baths:"Salles de bain",stat_loc:"Note emplacement",
   about_label:"Bienvenue",about_title:"« Fortuna » signifie bonne chance",
   about_p1:"…et nous espérons que vous serez aussi heureux dans notre appartement que nous le sommes à chaque séjour dans cette destination magique. Le Chalet Fortuna est un havre de paix où bonheur et détente sont au rendez-vous.",
@@ -429,7 +436,10 @@ de:{
   badge_superhost:"Superhost · 15 Jahre",badge_fav:"Gästeliebling",
   hero_title:"Ihr alpines Zuhause<br>mit Blick aufs Matterhorn",
   hero_tag:"Eine sonnige, gemütliche 3-Zimmer-Wohnung in einem traditionellen Holzchalet im Herzen von Zermatt — 5 Minuten von der Sunnegga-Bahn entfernt.",
-  hero_cta:"Verfügbarkeit prüfen",hero_cta2:"Fotos ansehen",
+  hero_cta:"Verfügbarkeit prüfen",hero_cta2:"Fotos ansehen",hero_cta3:"Virtueller 3D-Rundgang",
+  nav_tour:"3D-Rundgang",tour_label:"Virtueller 3D-Rundgang",tour_title:"Spazieren Sie durch die Wohnung",
+  tour_p:"Entdecken Sie die Wohnung, als wären Sie vor Ort: Bewegen Sie sich frei von Raum zu Raum und schauen Sie sich in 360° um — in diesem interaktiven 3D-Rundgang.",
+  tour_full:"Im Vollbild öffnen ↗",tour_start:"3D-Rundgang starten",
   stat_guests:"Gäste",stat_bedrooms:"Schlafzimmer",stat_beds:"Betten",stat_baths:"Badezimmer",stat_loc:"Lage-Bewertung",
   about_label:"Willkommen",about_title:"«Fortuna» bedeutet Glück",
   about_p1:"…und wir hoffen, dass Sie sich in unserem Zuhause in diesem fantastischen Ort genauso wohlfühlen wie wir bei jedem Aufenthalt. Das Chalet Fortuna ist eine Oase der Ruhe, in der Glück und Entspannung auf Sie warten.",
@@ -469,6 +479,7 @@ function applyLang(l){
     if(i18n[l][k]!==undefined) el.innerHTML=i18n[l][k];
   });
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  const tl=document.getElementById('tourLink'); if(tl) tl.href=TOUR_URL+'&lang='+l;
   renderAmenities(); renderCalendar();
 }
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
@@ -542,6 +553,19 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();
   if(e.key==='ArrowRight')document.getElementById('lbNext').click();
 });
+
+/* ===================== 3D TOUR (Matterport) ===================== */
+/* The tour only loads when the visitor clicks, so the page stays fast. */
+const TOUR_URL='https://my.matterport.com/show/?m=6ndDJUqfJSH';
+function tourUrl(extra){ return TOUR_URL+'&lang='+lang+(extra||''); }
+document.getElementById('tourPoster').onclick=()=>{
+  const f=document.createElement('iframe');
+  f.src=tourUrl('&play=1&qs=1');
+  f.title='Chalet Fortuna — 3D tour';
+  f.allow='fullscreen; xr-spatial-tracking; autoplay';
+  f.allowFullscreen=true;
+  document.getElementById('tourFrame').replaceChildren(f);
+};
 
 /* ===================== MISC ===================== */
 document.getElementById('burger').onclick=()=>document.getElementById('navLinks').classList.toggle('open');
