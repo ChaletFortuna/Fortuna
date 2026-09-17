@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://chaletfortuna.github.io/Fortuna/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chaletfortuna.github.io/Fortuna/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chaletfortuna.github.io/Fortuna/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://chaletfortuna.github.io/Fortuna/?lang=de"/>
+  </url>
+  <url>
+    <loc>https://chaletfortuna.github.io/Fortuna/?lang=fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chaletfortuna.github.io/Fortuna/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chaletfortuna.github.io/Fortuna/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://chaletfortuna.github.io/Fortuna/?lang=de"/>
+  </url>
+  <url>
+    <loc>https://chaletfortuna.github.io/Fortuna/?lang=de</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chaletfortuna.github.io/Fortuna/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://chaletfortuna.github.io/Fortuna/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://chaletfortuna.github.io/Fortuna/?lang=de"/>
+  </url>
+</urlset>

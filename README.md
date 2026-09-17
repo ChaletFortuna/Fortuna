@@ -1,5 +1,7 @@
 # Chalet Fortuna — Website
 
+**Live site → https://chaletfortuna.github.io/Fortuna/** — Chalet Fortuna, holiday apartment in Zermatt with Matterhorn view.
+
 Modern trilingual (EN/FR/DE) website for Chalet Fortuna, Zermatt, with a reservation calendar synced from Airbnb & VRBO.
 
 ## Files
@@ -9,6 +11,7 @@ Modern trilingual (EN/FR/DE) website for Chalet Fortuna, Zermatt, with a reserva
 - `fortuna_appliances.html` — appliance manuals (Google Drive links), linked from the guest guide
 - `fortuna.css` — **shared design system**: colours, fonts, nav, buttons, footer used by all three pages. Change the look here, once. After editing it, bump the `?v=` date in the `<link rel="stylesheet">` line of each page so browsers reload it.
 - `favicon.svg` — browser-tab icon
+- `sitemap.xml` — the list of pages (EN/FR/DE) to submit to Google Search Console
 - `images/` — optimized photos (from the old site, 27 MB → 3 MB)
 - `images/guide/` — photos used in the welcome guide
 - `guide/` — the **encrypted** welcome guide and guest logins (generated, safe to publish)
@@ -60,3 +63,26 @@ A dummy login is included for testing: `oesnou@gmail.com` / `Fortuna1`.
 ## Calendar sync (already configured)
 
 The Airbnb, VRBO and Booking.com iCal feeds are already set in `scripts/sync_ical.py`. After uploading to GitHub, go to the **Actions** tab → "Sync reservation calendar" → **Run workflow** once. It then runs automatically every day at 05:00 UTC and updates `availability.json`. You can also edit `availability.json` by hand at any time.
+
+## Get found on Google ("fortuna zermatt")
+
+The home page carries everything Google needs: the name "Chalet Fortuna Zermatt" in the title, the
+main heading and the description; structured data (`VacationRental`); one address per language
+(`/`, `/?lang=fr`, `/?lang=de`) declared with `hreflang`; and `sitemap.xml`. What is left can only be
+done by the owner of the site:
+
+1. **Google Search Console** — https://search.google.com/search-console → *Add property* →
+   *URL prefix* → `https://chaletfortuna.github.io/Fortuna/`. Choose the **HTML tag** method, copy
+   the `<meta name="google-site-verification" …>` line, paste it in `index.html` over the commented
+   placeholder in the `<head>`, upload, then click *Verify*.
+2. In Search Console: **Sitemaps** → add `sitemap.xml`; then **URL inspection** → paste the home
+   page address → **Request indexing**. Indexing usually takes a few days to two weeks.
+3. **Links to the site** (this is what makes it rank): the repository "About" box on GitHub
+   (⚙ → Website), the old funvibes.com/fortuna pages (link or redirect to the new site), the
+   Zermatt Tourism listing (ask them to add the website), and the "website" field of the VRBO /
+   Booking.com owner profiles where one exists.
+4. Same steps on **Bing Webmaster Tools** (it can import from Search Console in one click).
+
+Note: `robots.txt` is not used — on a GitHub *project* site it would live under `/Fortuna/`, where
+search engines do not look for it. `guest.html` and `fortuna_appliances.html` are kept out of Google
+with a `noindex` tag instead.
