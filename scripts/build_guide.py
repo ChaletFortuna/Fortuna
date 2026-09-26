@@ -118,7 +118,20 @@ def read_access(path: Path, today: datetime.date):
     return open_guests, report
 
 
-def write_guests(key: bytes, guests):
+def fingerprint(guests) -> str:
+    """Stable digest of who is open (changes when a login opens, closes or is renamed)."""
+    lines = sorted(f"{lookup_id(n, r)}|{d}" for n, r, d in guests)
+    return hashlib.sha256("\n".join(lines).encode()).hexdigest()
+
+
+def write_guests(key: bytes, guests) -> bool:
+    """Rewrite guests.json only when the set of open logins changed. Returns True if written."""
+    fp = fingerprint(guests)
+    try:
+        if json.loads(OUT_GUESTS.read_text()).get("fp") == fp:
+            return False
+    except (OSError, ValueError):
+        pass
     entries = {}
     for name, resno, display in guests:
         salt, iv = secrets.token_bytes(16), secrets.token_bytes(12)
@@ -127,7 +140,8 @@ def write_guests(key: bytes, guests):
             "s": b64(salt), "iv": b64(iv),
             "w": b64(AESGCM(derive(name, resno, salt)).encrypt(iv, payload, None))}
     OUT_DIR.mkdir(exist_ok=True)
-    OUT_GUESTS.write_text(json.dumps({"v": VERSION, "iter": PBKDF2_ITER, "guests": entries}, indent=1))
+    OUT_GUESTS.write_text(json.dumps({"v": VERSION, "iter": PBKDF2_ITER, "fp": fp, "guests": entries}, indent=1))
+    return True
 
 
 def write_content(key: bytes):
@@ -162,10 +176,10 @@ if __name__ == "__main__":
     key = load_key(a.key)
     today = datetime.date.fromisoformat(a.today) if a.today else zermatt_today()
     guests, report = read_access(a.guests, today)
-    write_guests(key, guests)
+    changed = write_guests(key, guests)
     if a.content:
         write_content(key)
         print("Re-encrypted guide/content.enc.json")
     print(f"Access list for {today}:")
     print("\n".join(report))
-    print(f"guide/guests.json: {len(guests)} open login(s)")
+    print(f"guide/guests.json: {len(guests)} open login(s) — {'UPDATED' if changed else 'no change'}")
