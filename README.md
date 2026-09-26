@@ -23,36 +23,50 @@ Modern trilingual (EN/FR/DE) website for Chalet Fortuna, Zermatt, with a reserva
 
 ## Guest area (welcome pack behind a login)
 
-Guests open `guest.html` and sign in with **their booking e-mail address** and **their
-reservation number**. The guide itself is never served in readable form: it is encrypted
-with AES-256-GCM, and each guest's e-mail + reservation number derives (PBKDF2, 300 000
+Guests open `guest.html` and sign in with **their family name** and **their reservation
+number**. The guide itself is never served in readable form: it is encrypted with
+AES-256-GCM, and each guest's name + reservation number derives (PBKDF2, 300 000
 iterations) the key that unwraps the decryption key. A visitor without a valid pair only
-ever downloads ciphertext.
+ever downloads ciphertext. The name is matched loosely (case, accents, spaces and hyphens
+are ignored), the reservation number ignores case and spaces.
 
-### Add a guest
+### Who can log in: the access file on Google Drive
 
-```bash
-pip install cryptography                       # once
-python3 scripts/build_guide.py --add guest@example.com HMABC12345 "Smith family"
-git add guide && git commit -m "Add guest" && git push
+The guest list is **FORTUNA GUEST ACCESS.csv** in the "Fortuna website" folder of the
+chalet.fortuna.zermatt@gmail.com Google Drive (never in this repo):
+
+```
+login,password,access_from,access_until,arrival,departure,guest,platform,bookings_row,status
+smith,HMABC12345,2026-11-12,2026-12-20,2026-12-12,2026-12-19,John Smith,Airbnb,,scheduled
 ```
 
-The guest can sign in a few seconds after the push (GitHub Pages rebuild). To remove a
-guest, delete their line from `guide-src/guests.csv` and run `python3 scripts/build_guide.py`.
+Only guests whose `access_from`–`access_until` window includes today (Zermatt date) are
+written to `guide/guests.json`; a `status` containing "cancel" is always left out. A
+Claude scheduled task ("Fortuna guest access – daily") reads the Drive file every night
+and rebuilds and pushes `guide/guests.json`, so access opens and closes automatically.
+
+To rebuild by hand (content key: "FORTUNA GUIDE KEY - PRIVATE.txt" in the same Drive folder):
+
+```bash
+pip install cryptography
+python3 scripts/build_guide.py --guests "FORTUNA GUEST ACCESS.csv" --key content.key
+python3 scripts/build_guide.py --check "Smith" HMABC12345      # test a login
+git add guide/guests.json && git commit -m "Update guest access" && git push
+```
 
 ### Edit the guide
 
 Edit `guide-src/content.html` (each `<section data-title="…">` becomes a chapter in the
-sidebar), then run `python3 scripts/build_guide.py` and commit `guide/`.
+sidebar), then run `build_guide.py --guests … --content` and commit `guide/`. The readable
+guide can always be recovered by decrypting `guide/content.enc.json` with the content key.
 
 ### Important
 
-`guide-src/` holds the readable guide, the guest list and the content key. It is listed
-in `.gitignore` so it is **never** pushed to GitHub — keep a copy somewhere safe (it is
-also attached to the Claude project). If you lose `guide-src/content.key`, just rebuild:
-a new key is generated and all guest entries are rewritten.
+`guide-src/` (readable guide, access list, content key) is in `.gitignore` and must
+**never** be pushed to GitHub. Keep the content key the same: changing it means
+re-encrypting the guide.
 
-A dummy login is included for testing: `oesnou@gmail.com` / `Fortuna1`.
+The access file has a permanent test login: `esnou` / `FORTUNA1`.
 
 ## Publish on GitHub Pages
 
