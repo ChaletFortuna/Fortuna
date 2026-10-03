@@ -18,11 +18,16 @@ Public outputs (committed):
                            is open today, under a key derived (PBKDF2-HMAC-SHA256)
                            from family name + reservation number
 
+Direct bookings: "FORTUNA DIRECT ACCESS.csv" (same columns) is generated daily from the signed
+rental contracts by scripts/direct_access.py (login = family name, password = FORTUNA) and passed
+as a second --guests file.
+
 A guest outside their window (or with status "cancelled") is simply not in guests.json,
 so the site refuses the login. Rebuild daily to open and close windows.
 
 Usage:
   python3 scripts/build_guide.py --guests ACCESS.csv                 # rebuild guests.json only
+  python3 scripts/build_guide.py --guests ACCESS.csv DIRECT.csv      # several access lists are merged
   python3 scripts/build_guide.py --guests ACCESS.csv --content      # also re-encrypt content.html
   python3 scripts/build_guide.py --check "Family name" RESNO         # verify a login offline
 Options:
@@ -163,7 +168,7 @@ def check(name, resno):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--guests", type=Path)
+    ap.add_argument("--guests", type=Path, nargs="+")
     ap.add_argument("--content", action="store_true")
     ap.add_argument("--key", type=Path, default=DEFAULT_KEY)
     ap.add_argument("--today")
@@ -175,7 +180,14 @@ if __name__ == "__main__":
         ap.error("--guests ACCESS.csv is required")
     key = load_key(a.key)
     today = datetime.date.fromisoformat(a.today) if a.today else zermatt_today()
-    guests, report = read_access(a.guests, today)
+    guests, report, seen = [], [], set()
+    for path in a.guests:
+        g, r = read_access(path, today)
+        report += r
+        for name, resno, display in g:          # same login+password listed twice -> keep one
+            lid = lookup_id(name, resno)
+            if lid not in seen:
+                seen.add(lid); guests.append((name, resno, display))
     changed = write_guests(key, guests)
     if a.content:
         write_content(key)
