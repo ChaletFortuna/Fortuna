@@ -48,17 +48,22 @@ main.container{padding-top:40px;padding-bottom:72px}
   <div class="container nav-inner">
     <a href="index.html" class="brand">Chalet <span>Fortuna</span></a>
     <div class="nav-right">
-      <a href="guest.html">← <span class="nav-long">Back to the guest guide</span><span class="nav-short">Guest guide</span></a>
+      <a href="guest.html" id="backLink">← <span class="nav-long" data-t="back">Back to the guest guide</span><span class="nav-short" data-t="back_short">Guest guide</span></a>
+      <div class="lang" aria-label="Language">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="fr">FR</button>
+        <button data-lang="de">DE</button>
+      </div>
     </div>
   </div>
 </nav>
 
 <header class="page-head">
   <div class="container">
-    <div class="section-label">Guest area</div>
-    <h1>Appliance manuals</h1>
-    <p>How everything works in the apartment — manuals in English, French and German (some in Italian). Pick your appliance, then your language.</p>
-    <div class="jump"><a href="#climate">🌡️ Living &amp; climate</a><a href="#kitchen">🍳 Kitchen</a><a href="#laundry">🧺 Laundry</a><a href="#tv">📺 Entertainment</a><a href="#electric">⚡ Electrical systems</a></div>
+    <div class="section-label" data-t="label">Guest area</div>
+    <h1 data-t="h1">Appliance manuals</h1>
+    <p data-t="intro">How everything works in the apartment — manuals in English, French and German (some in Italian). Pick your appliance, then your language.</p>
+    <div class="jump"><a href="#climate">🌡️ <span data-t="c_climate">Living &amp; climate</span></a><a href="#kitchen">🍳 <span data-t="c_kitchen">Kitchen</span></a><a href="#laundry">🧺 <span data-t="c_laundry">Laundry</span></a><a href="#tv">📺 <span data-t="c_tv">Entertainment</span></a><a href="#electric">⚡ <span data-t="c_electric">Electrical systems</span></a></div>
   </div>
 </header>
 
@@ -67,10 +72,10 @@ main.container{padding-top:40px;padding-bottom:72px}
 
     <!-- ===== LIVING & CLIMATE ===== -->
     <section class="panel cat" id="climate">
-      <h2><span class="cat-ico">🌡️</span>Living &amp; climate</h2>
+      <h2><span class="cat-ico">🌡️</span><span data-t="c_climate">Living &amp; climate</span></h2>
       <div class="manual">
         <span class="manual-ico">🌡️</span>
-        <div class="manual-name"><b>Radiator thermostat</b><span>Danfoss Ally™</span></div>
+        <div class="manual-name"><b data-t="n_thermo">Radiator thermostat</b><span>Danfoss Ally™</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1aDeKR5OVqIhlaNCeUjsejx7bUrwEfY3k/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
           <a href="https://drive.google.com/file/d/13-buYyTfqZ6dkatYB8R_QvemQt4rkiOA/view?usp=drivesdk" target="_blank" rel="noopener">Français</a>
@@ -81,10 +86,10 @@ main.container{padding-top:40px;padding-bottom:72px}
 
     <!-- ===== KITCHEN ===== -->
     <section class="panel cat" id="kitchen">
-      <h2><span class="cat-ico">🍳</span>Kitchen</h2>
+      <h2><span class="cat-ico">🍳</span><span data-t="c_kitchen">Kitchen</span></h2>
       <div class="manual">
         <span class="manual-ico">🍽️</span>
-        <div class="manual-name"><b>Dishwasher — quick guide</b><span>Electrolux</span></div>
+        <div class="manual-name"><b data-t="n_dw_quick">Dishwasher — quick guide</b><span>Electrolux</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1-eoKTKVN6IpxRtbsRnpDvMhy6vg-qkaU/view?usp=drivesdk" target="_blank" rel="noopener">English · Deutsch</a>
           <a href="https://drive.google.com/file/d/1F3r5jazIMgt2Ht1pj_UiSR-zc0PcLXEy/view?usp=drivesdk" target="_blank" rel="noopener">Français · Italiano</a>
@@ -92,7 +97,7 @@ main.container{padding-top:40px;padding-bottom:72px}
       </div>
       <div class="manual">
         <span class="manual-ico">📖</span>
-        <div class="manual-name"><b>Dishwasher — full manual</b><span>Electrolux</span></div>
+        <div class="manual-name"><b data-t="n_dw_full">Dishwasher — full manual</b><span>Electrolux</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/13wnEajyuE6fE-lwm-wdoSfvTfcsvDBcO/view?usp=drivesdk" target="_blank" rel="noopener">English · Deutsch</a>
           <a href="https://drive.google.com/file/d/1sEASZGZA48uBGiicKHFPK5xJuULh8R_m/view?usp=drivesdk" target="_blank" rel="noopener">Français · Italiano</a>
@@ -100,23 +105,23 @@ main.container{padding-top:40px;padding-bottom:72px}
       </div>
       <div class="manual">
         <span class="manual-ico">🔥</span>
-        <div class="manual-name"><b>Induction hob</b><span>Bosch PKF6..FP..</span></div>
+        <div class="manual-name"><b data-t="n_hob">Induction hob</b><span>Bosch PKF6..FP..</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1qqRWzvHj3i2SmWsIN9m_lDsKyZ5CeQXY/view?usp=drivesdk" target="_blank" rel="noopener">Français · Deutsch</a>
         </div>
       </div>
       <div class="manual">
         <span class="manual-ico">🍞</span>
-        <div class="manual-name"><b>Oven</b><span>Electrolux</span></div>
+        <div class="manual-name"><b data-t="n_oven">Oven</b><span>Electrolux</span></div>
         <div class="manual-langs">
-          <a href="https://drive.google.com/file/d/1Tnv_SKfDZHAHhCWsezUr-QceetkAKAcb/view?usp=drivesdk" target="_blank" rel="noopener">Quick guide (multilingual)</a>
+          <a href="https://drive.google.com/file/d/1Tnv_SKfDZHAHhCWsezUr-QceetkAKAcb/view?usp=drivesdk" target="_blank" rel="noopener" data-t="quick_multi">Quick guide (multilingual)</a>
           <a href="https://drive.google.com/file/d/1ayAmwTxreKbAXAFdHE7IAZKYfPHrVQvZ/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
           <a href="https://drive.google.com/file/d/1KNr3b0YL8QyTyOYCmPr3uO2qI3RsWKCh/view?usp=drivesdk" target="_blank" rel="noopener">Français</a>
         </div>
       </div>
       <div class="manual">
         <span class="manual-ico">📟</span>
-        <div class="manual-name"><b>Microwave / combi-oven</b><span>Electrolux</span></div>
+        <div class="manual-name"><b data-t="n_micro">Microwave / combi-oven</b><span>Electrolux</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1WI-yNgwLds47OgZrVPdVxQ90D3_4O1NT/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch · English</a>
         </div>
@@ -125,10 +130,10 @@ main.container{padding-top:40px;padding-bottom:72px}
 
     <!-- ===== LAUNDRY ===== -->
     <section class="panel cat" id="laundry">
-      <h2><span class="cat-ico">🧺</span>Laundry</h2>
+      <h2><span class="cat-ico">🧺</span><span data-t="c_laundry">Laundry</span></h2>
       <div class="manual">
         <span class="manual-ico">🫧</span>
-        <div class="manual-name"><b>Washing machine</b><span>AEG</span></div>
+        <div class="manual-name"><b data-t="n_wash">Washing machine</b><span>AEG</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1_nu7Faybmebd486_SMKDH_r5TZLjmhmq/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
           <a href="https://drive.google.com/file/d/1OcnLarT9Z44Elj7Z5GOh4oqttQjxQQu2/view?usp=drivesdk" target="_blank" rel="noopener">Français</a>
@@ -137,7 +142,7 @@ main.container{padding-top:40px;padding-bottom:72px}
       </div>
       <div class="manual">
         <span class="manual-ico">🌀</span>
-        <div class="manual-name"><b>Tumble dryer</b><span>Miele</span></div>
+        <div class="manual-name"><b data-t="n_dryer">Tumble dryer</b><span>Miele</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1FToDONXFjPRTufOM7lfmKXXcjKWnbgiU/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
           <a href="https://drive.google.com/file/d/1QPq0lhuKLuiRxph8tUxMGYTNcSzycaXQ/view?usp=drivesdk" target="_blank" rel="noopener">Français</a>
@@ -149,10 +154,10 @@ main.container{padding-top:40px;padding-bottom:72px}
 
     <!-- ===== ENTERTAINMENT ===== -->
     <section class="panel cat" id="tv">
-      <h2><span class="cat-ico">📺</span>Entertainment</h2>
+      <h2><span class="cat-ico">📺</span><span data-t="c_tv">Entertainment</span></h2>
       <div class="manual">
         <span class="manual-ico">📺</span>
-        <div class="manual-name"><b>Smart TV</b><span>Samsung (2025 model)</span></div>
+        <div class="manual-name"><b data-t="n_tv">Smart TV</b><span data-t="s_tv">Samsung (2025 model)</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/17o3YeAk6CrefgtGYR171iZG97NCu1hXc/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
           <a href="https://drive.google.com/file/d/1ydyxmINuIJ7q0tIHCf4q6GDYeOpj8Rv2/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch</a>
@@ -160,7 +165,7 @@ main.container{padding-top:40px;padding-bottom:72px}
       </div>
       <div class="manual">
         <span class="manual-ico">🎮</span>
-        <div class="manual-name"><b>Smart remote control</b><span>Samsung SolarCell Remote</span></div>
+        <div class="manual-name"><b data-t="n_remote">Smart remote control</b><span>Samsung SolarCell Remote</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1s7w-Hzll6rSeMPO8JvxlJaDI0TJAQOTW/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch · English</a>
         </div>
@@ -169,10 +174,10 @@ main.container{padding-top:40px;padding-bottom:72px}
 
     <!-- ===== ELECTRICAL SYSTEMS ===== -->
     <section class="panel cat" id="electric">
-      <h2><span class="cat-ico">⚡</span>Electrical systems</h2>
+      <h2><span class="cat-ico">⚡</span><span data-t="c_electric">Electrical systems</span></h2>
       <div class="manual">
         <span class="manual-ico">⚡</span>
-        <div class="manual-name"><b>Electrical panel</b><span>Main distribution</span></div>
+        <div class="manual-name"><b data-t="n_panel">Electrical panel</b><span data-t="s_panel">Main distribution</span></div>
         <div class="manual-langs">
           <a href="https://drive.google.com/file/d/1UYjOrJHfrp_DH5SnKbCO34X5B3hOOyds/view?usp=drivesdk" target="_blank" rel="noopener">English</a>
           <a href="https://drive.google.com/file/d/1zAkX_WUfQlIVotxJN1WJed1PiQucsCQh/view?usp=drivesdk" target="_blank" rel="noopener">Deutsch</a>
@@ -180,12 +185,53 @@ main.container{padding-top:40px;padding-bottom:72px}
       </div>
     </section>
 
-  <div class="g-callout g-contact"><b>Tip.</b> Manuals open in Google Drive; for easier reading, download the PDF to your device. Any question about an appliance? Write to <a href="mailto:chalet.fortuna.zermatt@gmail.com?Subject=Chalet%20Fortuna%20%E2%80%94%20appliance%20question">chalet.fortuna.zermatt@gmail.com</a> — we are happy to help.</div>
+  <div class="g-callout g-contact" data-t="tip"><b>Tip.</b> Manuals open in Google Drive; for easier reading, download the PDF to your device. Any question about an appliance? Write to <a href="mailto:chalet.fortuna.zermatt@gmail.com?Subject=Chalet%20Fortuna%20%E2%80%94%20appliance%20question">chalet.fortuna.zermatt@gmail.com</a> — we are happy to help.</div>
 </main>
 
 <footer class="foot-mini">
-  <div class="container">© <span id="year"></span> Chalet Fortuna, Zermatt · <a href="index.html">chaletfortuna.github.io/Fortuna</a></div>
+  <div class="container">© <span id="year"></span> Chalet Fortuna, Zermatt · <a href="index.html" id="footLink">chaletfortuna.github.io/Fortuna</a></div>
 </footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+/* EN / FR / DE — same choice as the rest of the site (localStorage "cf_lang", ?lang=fr|de) */
+const M='<a href="mailto:chalet.fortuna.zermatt@gmail.com?Subject=Chalet%20Fortuna%20%E2%80%94%20appliance%20question">chalet.fortuna.zermatt@gmail.com</a>';
+const T={
+en:{title:'Appliance manuals — Chalet Fortuna guest area',back:'Back to the guest guide',back_short:'Guest guide',label:'Guest area',h1:'Appliance manuals',
+ intro:'How everything works in the apartment — manuals in English, French and German (some in Italian). Pick your appliance, then your language.',
+ c_climate:'Living &amp; climate',c_kitchen:'Kitchen',c_laundry:'Laundry',c_tv:'Entertainment',c_electric:'Electrical systems',
+ n_thermo:'Radiator thermostat',n_dw_quick:'Dishwasher — quick guide',n_dw_full:'Dishwasher — full manual',n_hob:'Induction hob',n_oven:'Oven',n_micro:'Microwave / combi-oven',
+ n_wash:'Washing machine',n_dryer:'Tumble dryer',n_tv:'Smart TV',n_remote:'Smart remote control',n_panel:'Electrical panel',s_tv:'Samsung (2025 model)',s_panel:'Main distribution',
+ quick_multi:'Quick guide (multilingual)',
+ tip:'<b>Tip.</b> Manuals open in Google Drive; for easier reading, download the PDF to your device. Any question about an appliance? Write to '+M+' — we are happy to help.'},
+fr:{title:'Modes d’emploi — espace invités du Chalet Fortuna',back:'Retour au guide invités',back_short:'Guide invités',label:'Espace invités',h1:'Modes d’emploi des appareils',
+ intro:'Comment tout fonctionne dans l’appartement — modes d’emploi en anglais, français et allemand (certains en italien). Choisissez l’appareil, puis la langue.',
+ c_climate:'Séjour &amp; chauffage',c_kitchen:'Cuisine',c_laundry:'Buanderie',c_tv:'Divertissement',c_electric:'Installation électrique',
+ n_thermo:'Thermostat de radiateur',n_dw_quick:'Lave-vaisselle — guide rapide',n_dw_full:'Lave-vaisselle — notice complète',n_hob:'Plaque à induction',n_oven:'Four',n_micro:'Micro-ondes / four combiné',
+ n_wash:'Lave-linge',n_dryer:'Sèche-linge',n_tv:'Smart TV',n_remote:'Télécommande intelligente',n_panel:'Tableau électrique',s_tv:'Samsung (modèle 2025)',s_panel:'Distribution principale',
+ quick_multi:'Guide rapide (multilingue)',
+ tip:'<b>Astuce.</b> Les modes d’emploi s’ouvrent dans Google Drive ; pour une lecture plus confortable, téléchargez le PDF sur votre appareil. Une question sur un appareil ? Écrivez à '+M+' — nous vous aiderons volontiers.'},
+de:{title:'Bedienungsanleitungen — Gästebereich Chalet Fortuna',back:'Zurück zum Gästeführer',back_short:'Gästeführer',label:'Gästebereich',h1:'Bedienungsanleitungen',
+ intro:'Wie in der Wohnung alles funktioniert — Anleitungen auf Englisch, Französisch und Deutsch (teilweise auf Italienisch). Wählen Sie das Gerät, dann die Sprache.',
+ c_climate:'Wohnen &amp; Heizung',c_kitchen:'Küche',c_laundry:'Wäsche',c_tv:'Unterhaltung',c_electric:'Elektrische Anlagen',
+ n_thermo:'Heizkörperthermostat',n_dw_quick:'Geschirrspüler — Kurzanleitung',n_dw_full:'Geschirrspüler — vollständige Anleitung',n_hob:'Induktionskochfeld',n_oven:'Backofen',n_micro:'Mikrowelle / Kombi-Backofen',
+ n_wash:'Waschmaschine',n_dryer:'Tumbler',n_tv:'Smart-TV',n_remote:'Smart-Fernbedienung',n_panel:'Sicherungskasten',s_tv:'Samsung (Modell 2025)',s_panel:'Hauptverteilung',
+ quick_multi:'Kurzanleitung (mehrsprachig)',
+ tip:'<b>Tipp.</b> Die Anleitungen öffnen sich in Google Drive; zum bequemeren Lesen laden Sie das PDF auf Ihr Gerät herunter. Fragen zu einem Gerät? Schreiben Sie an '+M+' — wir helfen gerne.'}
+};
+const urlLang=new URLSearchParams(location.search).get('lang');
+let lang=(urlLang&&urlLang.toLowerCase())||(()=>{try{return localStorage.getItem('cf_lang');}catch{return null;}})()||(navigator.language||'en').slice(0,2);
+if(!T[lang]) lang='en';
+function applyLang(l){
+  lang=l; try{localStorage.setItem('cf_lang',l);}catch{}
+  document.documentElement.lang=l; document.title=T[l].title;
+  document.querySelectorAll('[data-t]').forEach(el=>{const v=T[l][el.dataset.t]; if(v!==undefined) el.innerHTML=v;});
+  const q=l==='en'?'':'?lang='+l;
+  document.getElementById('backLink').href='guest.html'+q; document.getElementById('footLink').href='index.html'+q;
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  if(urlLang!==null||l!=='en'){try{history.replaceState(null,'',(l==='en'?location.pathname:'?lang='+l)+location.hash);}catch{}}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+applyLang(lang);
+</script>
 </body>
 </html>
